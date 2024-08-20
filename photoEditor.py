@@ -6,6 +6,7 @@ path = '/Users/alexbark/Documents/Python_Automation_Projects/Python_Automation_P
 pathOut = '/Users/alexbark/Documents/Python_Automation_Projects/Python_Automation_Projects/editedImgs/'
 
 
+
 def open_image(file_name):
     try:
         img = Image.open(f"{path}/{file_name}")
