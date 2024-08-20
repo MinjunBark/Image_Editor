@@ -81,13 +81,13 @@ def process_image():
     original_frame.pack(side=tk.LEFT)
 
     edited_frame = tk.Frame(root)
-    edited_frame.pack(side=tk.RIGHT)
+    edited_frame.pack(side=tk.LEFT)
 
     original_label = tk.Label(original_frame, text="Original Images")
-    original_label.pack()
+    original_label.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
     edited_label = tk.Label(edited_frame, text="Edited Images")
-    edited_label.pack()
+    edited_label.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
     original_img_labels = []
     edited_img_labels = []
