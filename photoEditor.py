@@ -2,8 +2,8 @@ from PIL import Image, ImageEnhance, ImageFilter
 import os
 import matplotlib.pyplot as plt
 
-path = '/Users/alexbark/Documents/Python_Automation_Projects/Python_Automation_Projects/Images'
-pathOut = '/Users/alexbark/Documents/Python_Automation_Projects/Python_Automation_Projects/editedImgs/'
+path = '/Users/alexbark/Documents/Python_Automation_Projects/Image_Editor/Images'
+pathOut = '/Users/alexbark/Documents/Python_Automation_Projects/Image_Editor/editedImgs'
 
 
 
