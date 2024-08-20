@@ -1,6 +1,7 @@
 from PIL import Image, ImageEnhance, ImageFilter
 import os
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
+
 
 path = '/Users/alexbark/Documents/Python_Automation_Projects/Image_Editor/Images'
 pathOut = '/Users/alexbark/Documents/Python_Automation_Projects/Image_Editor/editedImgs'
@@ -40,22 +41,22 @@ def adjust_contrast(img, file_name): #factor value: 0 - 10
     return edit
     
     
-def show_image(original_imgs, edited_imgs):
-    num_images = len(original_imgs)
-    fig, ax = plt.subplots(2, num_images, figsize=(12, 6))
+# def show_image(original_imgs, edited_imgs):
+#     num_images = len(original_imgs)
+#     fig, ax = plt.subplots(2, num_images, figsize=(12, 6))
     
-    for i , (original_img, edited_img) in enumerate(zip(original_imgs, edited_imgs)):
-        ax[0,i].imshow(original_img)
-        ax[0,i].set_title(f'Original Image')
-        ax[0,i].set_xticks([])
-        ax[0,i].set_yticks([])
+#     for i , (original_img, edited_img) in enumerate(zip(original_imgs, edited_imgs)):
+#         ax[0,i].imshow(original_img)
+#         ax[0,i].set_title(f'Original Image')
+#         ax[0,i].set_xticks([])
+#         ax[0,i].set_yticks([])
         
-        ax[1,i].imshow(edited_img)
-        ax[1,i].set_title(f'Edited Image')
-        ax[1,i].set_xticks([])
-        ax[1,i].set_yticks([])
-    plt.tight_layout()
-    plt.show()
+#         ax[1,i].imshow(edited_img)
+#         ax[1,i].set_title(f'Edited Image')
+#         ax[1,i].set_xticks([])
+#         ax[1,i].set_yticks([])
+#     plt.tight_layout()
+#     plt.show()
 
 def process_image():
     original_imgs = []
@@ -63,11 +64,11 @@ def process_image():
     for file in os.listdir(path):
         original_img = open_image(file)
         sharpened_img = adjust_sharpness(original_img, file)
-        edited_imgs.append(sharpened_img)
-        # brightened_img =adjust_brightness(sharpened_img, file)
-        # contrasted_img = adjust_contrast(brightened_img, file)
+        # edited_imgs.append(sharpened_img)
+        brightened_img =adjust_brightness(sharpened_img, file)
+        contrasted_img = adjust_contrast(brightened_img, file)
         original_imgs.append(original_img)
-        # edited_imgs.append(contrasted_img)
+        edited_imgs.append(contrasted_img)
     
     
     show_image(original_imgs, edited_imgs)
